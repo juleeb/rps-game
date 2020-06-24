@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>RPS Game</head>
+    <body>
+        <script type="text/javascript">
+
+            var computerChoice = ["r", "p", "s"];
+
+            var win = 0;
+            var lose = 0;
+            var tied = 0;
+
+           for (var i = 0; i < 10; i++) {
+
+            var computerSelect = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+                
+                console.log(computerSelect);
+
+            var userChoice = prompt("Please select r, p, or s to play game.");
+                userChoice = userChoice.toLowerCase();
+
+            if (userChoice === "r" || userChoice === "p" || userChoice === "s") {
+                alert
+                ("You selected " + userChoice + " and computer selected " + computerSelect);
+            }
+            
+            if ((userChoice === "r" && computerSelect === "p") || 
+                (userChoice === "p" && computerSelect === "s") || 
+                (userChoice === "s" && computerSelect === "r")) {
+                    lose++;
+                    
+                    alert 
+                    ("You lose by " + lose++ + " points");
+            }
+            
+            if ((userChoice === "p" && computerSelect === "r") ||
+                (userChoice === "s" && computerSelect === "p") ||
+                (userChoice === "r" && computerSelect === "s")) {
+                    win++;
+                    
+                    alert
+                    ("You Win by " + win++ + " points");
+                }
+            if ((userChoice === "s" && computerSelect === "s") ||
+                (userChoice === "p" && computerSelect === "p") ||
+                (userChoice === "r" && computerSelect === "r")) {
+                    tied++;
+                    
+                    console.log(tied++);
+                    
+                    alert
+                    ("Tied with computer!")
+                }
+            
+
+            alert("Restart the game.")    
+        
+            }
+
+            alert("You win " + win + " times" + " you lose" + lose + " times" + " and you tied" + tied + " times");
+
+        </script>
+    </body>
+</html>
